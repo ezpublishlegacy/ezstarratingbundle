@@ -1,0 +1,4 @@
+system:
+    default:
+        field_templates:
+            - template: MakingWaveseZStarRatingBundle:Default:ezsrrating_field_template.html.twig

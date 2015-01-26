@@ -1,0 +1,7 @@
+{% block ezsrrating_field %}
+    <div class="star-rating" title="{{ field.value.rating }} / 5">
+        {% for rate in 1..5 %}
+            <span class="{%  if field.value.rounded_average >= rate %}set{% else %}unset{% endif %}">{%  if field.value.rounded_average >= rate %}*{% else %}o{% endif %}</span>
+        {% endfor %}
+    </div>
+{% endblock %}

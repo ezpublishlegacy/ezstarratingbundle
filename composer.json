@@ -1,0 +1,21 @@
+{
+    "name": "makingwaves/ezstarratingbundle",
+    "description": "eZ Star Rating Bundle for eZ Publish Platform, based on legacy database model",
+    "license": "GPL-2.0",
+    "authors": [
+        {
+            "name": "Making Waves",
+            "homepage": "https://github.com/makingwaves/ezstarratingbundle"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.3.3",
+        "ezsystems/ezpublish-kernel": "~5.3|>=2014.03",
+        "ezsystems/ezstarrating": "~5.3|>=2014.03"
+    },
+    "autoload": {
+        "psr-0": {"MakingWaves\\eZStarRatingBundle": ""}
+    },
+    "target-dir": "MakingWaves/eZStarRatingBundle"
+}

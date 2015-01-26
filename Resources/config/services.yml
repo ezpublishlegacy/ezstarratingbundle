@@ -1,0 +1,27 @@
+parameters:
+    makingwaves.ezstarratingbundle.fieldType.ezsrrating.class: MakingWaves\eZStarRatingBundle\eZ\Publish\FieldType\StarRating\Type
+    makingwaves.ezstarratingbundle.fieldType.ezsrrating.converter.class: MakingWaves\eZStarRatingBundle\eZ\Publish\FieldType\StarRating\LegacyConverter
+    makingwaves.ezstarratingbundle.fieldType.ezsrrating.externalStorage.class: MakingWaves\eZStarRatingBundle\eZ\Publish\FieldType\StarRating\StarRatingStorage
+    makingwaves.ezstarratingbundle.fieldType.ezsrrating.storage_gateway.class: MakingWaves\eZStarRatingBundle\eZ\Publish\FieldType\StarRating\StarRatingStorage\Gateway\LegacyStorage
+
+services:
+    makingwaves.ezstarratingbundle.fieldType.ezsrrating:
+        parent: ezpublish.fieldType
+        class: %makingwaves.ezstarratingbundle.fieldType.ezsrrating.class%
+        tags:
+            - {name: ezpublish.fieldType, alias: ezsrrating}
+
+    makingwaves.ezstarratingbundle.fieldType.ezsrrating.converter:
+        class: %makingwaves.ezstarratingbundle.fieldType.ezsrrating.converter.class%
+        tags:
+            - {name: ezpublish.storageEngine.legacy.converter, alias: ezsrrating}
+
+    makingwaves.ezstarratingbundle.fieldType.ezsrrating.externalStorage:
+        class: %makingwaves.ezstarratingbundle.fieldType.ezsrrating.externalStorage.class%
+        tags:
+            - {name: ezpublish.fieldType.externalStorageHandler, alias: ezsrrating}
+
+    makingwaves.ezstarratingbundle.fieldType.ezsrrating.storage_gateway:
+        class: %makingwaves.ezstarratingbundle.fieldType.ezsrrating.storage_gateway.class%
+        tags:
+            - {name: ezpublish.fieldType.externalStorageHandler.gateway, alias: ezsrrating, identifier: LegacyStorage}
