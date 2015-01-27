@@ -9,4 +9,3 @@ Todo list
 
 * Update rates from Symfony bundle (currently uses ajax legacy solution)
 * Include info on if current user have given a rating on a content
-

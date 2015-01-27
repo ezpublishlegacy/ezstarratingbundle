@@ -71,12 +71,10 @@ class LegacyStorage extends Gateway
         $row = $statement->fetch( \PDO::FETCH_ASSOC );
 
         if ( $row === false )
-            throw new \RuntimeException(
-                sprintf(
-                    'Rating data cannot be retrieved based on the attribute ID "%s"',
-                    $attributeID
-                )
-            );
+        {
+            // No rates found for this attribute
+            return array( 'rating_average' => 0, 'rating_count' => 0 );
+        }
 
         return $row;
     }
