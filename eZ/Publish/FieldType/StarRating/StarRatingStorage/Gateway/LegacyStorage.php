@@ -46,7 +46,6 @@ class LegacyStorage extends Gateway
 
     public function getContentTypeId( Field $field )
     {
-        var_dump( $field );
     }
 
     /**
